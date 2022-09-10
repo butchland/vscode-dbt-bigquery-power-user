@@ -177,7 +177,7 @@ function getWebviewContent(context: vscode.ExtensionContext): string {
 	const schemeIndexPath = indexPath.with({ scheme: 'vscode-resource' });
 	let htmlfile: Buffer | undefined;
 	try {
-		console.log(`getWebviewContent: attempting to read file ${schemeIndexPath.fsPath}`)
+		console.log(`getWebviewContent: attempting to read file ${schemeIndexPath.fsPath}`);
 		htmlfile = fs.readFileSync(schemeIndexPath.fsPath);
 	} catch (error) {
 		console.log(`getWebviewContent: could not find htmlfile ${schemeIndexPath.fsPath}`);
