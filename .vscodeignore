@@ -9,3 +9,9 @@ vsc-extension-quickstart.md
 **/.eslintrc.json
 **/*.map
 **/*.ts
+.DS_Store
+.idea
+.history
+.credentials
+.github
+*.vsix

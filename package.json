@@ -13,7 +13,7 @@
     "bugs": {
         "url": "https://github.com/butchland/vscode-dbt-bigquery-power-user/issues"
     },
-    "version": "0.5.23",
+    "version": "0.5.24",
     "engines": {
         "vscode": "^1.52.0"
     },
