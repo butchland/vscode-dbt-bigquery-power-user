@@ -194,7 +194,7 @@ export class DBTProject implements Disposable {
     let remaining = path.relative(this.projectRoot.path, modelPath.path);
     remaining = remaining.split(path.sep).join('/');
     const pattern = `${this.targetPath}/compiled/${this.projectName}/${remaining}`;
-    const modelName = path.basename(modelPath.fsPath, ".sql");
+    //const modelName = path.basename(modelPath.fsPath, ".sql");
 
     // console.log(`findModelInTargetfolder: looking for ${pattern}`);
     let targetModels = await workspace.findFiles(
@@ -205,12 +205,13 @@ export class DBTProject implements Disposable {
     );
     if (targetModels.length > 0) {
      
-      const orig_file = modelPath.path;
+      const orig_file = modelPath.fsPath;
       const orig_file_stats = statSync(orig_file);
       const orig_file_mtime = orig_file_stats.mtime;
 
       const targetModel0 = targetModels[0];
       // console.log(`findModelInTargetfolder: ${targetModel0}`);
+      // const target_path = targetModel0.fsPath;
       const target_path = targetModel0.fsPath;
       console.log(`previewSQLInTargetfolder: ${target_path}`);
       const target_path_stats = statSync(target_path);
@@ -255,12 +256,12 @@ export class DBTProject implements Disposable {
       }
       const targetModel0 = targetModels[0];
       // console.log(`findModelInTargetfolder: ${targetModel0}`);
-      const target_path = targetModel0.path;
+      const target_path = targetModel0.fsPath;
       console.log(`previewSQLInTargetfolder: ${target_path}`);
       const target_path_stats = statSync(target_path);
       const target_path_mtime = target_path_stats.mtime;
       console.log(`target_path_mtime: ${target_path_mtime}`);
-      const buffer = readFileSync(targetModel0.path);
+      const buffer = readFileSync(targetModel0.fsPath);
       return buffer.toString();
 
     }
