@@ -30,3 +30,4 @@ The highlights of this extension are:
    also be changed (default value: 10000). Unchecking the checkbox and rerunning the query will run the query without the limit clause. _(Note: this limit does not apply to the download buttons)_
 * **Also fixed for in 0.5.20**: Checking, installing, and upgrading the dbt package now works with the latest versions of dbt. 
 * **Fixed in 0.5.21**: Remove ambiguity in looking up compiled/run target sql files from models/analysis sql file
+* **Fixed in 0.5.24**: Fix bug #1 that causes an error message "Error: ENOENT: no such file or directory, stat..." for those running VS Code on Windows. Please update if you've encountered this problem in the past and retry again. Thanks for your patience.
